@@ -30,10 +30,10 @@ function grepTools($, match) {
     return result;
 }
 
-function outputTools(id, result) {
+function outputTools(issueId, result) {
     if (result.length) {
         console.log();
-        console.log(`Issue ${id}`);
+        console.log(`Issue ${issueId}`);
         console.log('======');
         console.log();
         result.forEach(({name, description, url}) => {
@@ -43,13 +43,22 @@ function outputTools(id, result) {
             console.log();
         });
     } else {
-        console.log(`Issue ${id}: No matching result`);
+        console.log(`Issue ${issueId}: No matching result`);
     }
 }
 
 function parseIssue(issueId, match) {
     return fetch(`http://webtoolsweekly.com/archives/issue-${issueId}/`)
-        .then(response => response.text())
+        .then((response) => {
+            return new Promise((resolve, reject) => {
+                if (response.status === 404) {
+                    console.log(`Issue ${issueId} not found`);
+                    console.log();
+                } else {
+                    resolve(response.text());
+                }
+            });
+        })
         .then(html => {
             const $ = cheerio.load(html);
             const result = grepTools($, match);
