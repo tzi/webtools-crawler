@@ -22,7 +22,8 @@ function grepTools($, match) {
         const name = $(node).text();
         const url = $(node).parent().attr('href');
         const description = getNextText($(node).parent());
-        if (description && new RegExp(match, 'i').test(description)) {
+        const matching = (str) => new RegExp(match, 'i').test(str);
+        if (description && (matching(name) || matching(description) || matching(url))) {
             result.push({name, url, description});
         }
     });
