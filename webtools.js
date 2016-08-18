@@ -64,14 +64,14 @@ function parseIssue(issueId, match) {
 }
 
 function iterativeParsing(issueId, match) {
-    const rl = readline.createInterface({
-        input: process.stdin,
-        output: process.stdout
-    });
     parseIssue(issueId, match)
         .then((result) => {
             if (result.length) {
-                rl.question('Next issue? ', (answer) => {
+                const rl = readline.createInterface({
+                    input: process.stdin,
+                    output: process.stdout
+                });
+                rl.question('Next issue (ynq)? ', (answer) => {
                     if (answer === 'q' || answer === 'n') {
                         process.exit();
                     }
