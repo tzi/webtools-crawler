@@ -29,3 +29,38 @@ Installation
 git clone git@github.com:tzi/webtools-crawler.git
 npm i
 ```
+
+
+Examples
+------
+
+```
+$ ./webtools.js bem
+Issue 160: No matching result
+Issue 159: No matching result
+Issue 158: No matching result
+
+Issue 157
+======
+
+Avalanche
+	 "Superclean, powerful, responsive, Sass-based, BEM-syntax CSS grid system."
+	 https://github.com/colourgarden/avalanche
+
+SassBlocks
+	 "Introduces a pattern to make working with BEM-blocks/modules in Sass/SCSS a little more OOP."
+	 https://github.com/djfarly/sass-blocks
+	 
+Next issue (ynq)?
+```
+
+```
+$ ./webtools.js -i 138 bem
+
+Issue 138
+======
+
+_bemify
+	 "A set of Sass mixins to write well-structured, maintainable, idiomatic BEM-style .scss."
+	 http://franzheidl.github.io/bemify/
+```
