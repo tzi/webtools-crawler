@@ -32,6 +32,7 @@ function grepTools($, match) {
 
 function outputTools(id, result) {
     if (result.length) {
+        console.log();
         console.log(`Issue ${id}`);
         console.log('======');
         console.log();
@@ -43,7 +44,6 @@ function outputTools(id, result) {
         });
     } else {
         console.log(`Issue ${id}: No matching result`);
-        console.log();
     }
 }
 
@@ -66,6 +66,9 @@ function parseIssue(issueId, match) {
 function iterativeParsing(issueId, match) {
     parseIssue(issueId, match)
         .then((result) => {
+            if (issueId === 1) {
+                process.exit();
+            }
             if (result.length) {
                 const rl = readline.createInterface({
                     input: process.stdin,
