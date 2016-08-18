@@ -64,3 +64,14 @@ _bemify
 	 "A set of Sass mixins to write well-structured, maintainable, idiomatic BEM-style .scss."
 	 http://franzheidl.github.io/bemify/
 ```
+
+
+Author & Community
+--------
+
+WebTools Crawler is under [MIT License](http://opensource.org/licenses/MIT)
+
+This tool is created by [Thomas ZILLIOX](http://tzi.fr)
+
+The WebToolsWeekly newsletter is curated by [Louis Lazaris](https://twitter.com/ImpressiveWebs)
+
