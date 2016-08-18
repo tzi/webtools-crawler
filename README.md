@@ -8,13 +8,13 @@ Usage
 ------
 
 ```sh
-# See tools from last issue (and the previous ones iteratively)
+# See tools from the last issue (and the previous ones iteratively)
 ./webtools.js 
 
 # See tools from a specific issue
 ./webtools.js -i 86
 
-# See matching tools from last issue (and the previous ones iteratively)
+# See matching tools from the last issue (and the previous ones iteratively)
 ./webtools.js <regex>
 
 # See matching tools from a specific issue
